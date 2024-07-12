@@ -20,6 +20,8 @@ int main() {
     Array d = MathOps::subtract(a, b);
     Array e = MathOps::multiply(a, b);
     Array f = LinAlg::transpose(a);
+    Array g = MathOps::elementWiseMultiply(a, b);
+    Array h = a.flatten();
 
     std::cout << "Matrix A:" << std::endl;
     a.print();
@@ -33,6 +35,12 @@ int main() {
     e.print();
     std::cout << "Transpose of A:" << std::endl;
     f.print();
+    std::cout << "Element-wise A * B:" << std::endl;
+    g.print();
+    std::cout << "Flattened A:" << std::endl;
+    h.print();
+    std::cout << "Sum of A: " << MathOps::sum(a) << std::endl;
+    std::cout << "Mean of A: " << MathOps::mean(a) << std::endl;
 
     return 0;
 }

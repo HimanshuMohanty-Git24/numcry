@@ -44,3 +44,31 @@ Array MathOps::multiply(const Array& a, const Array& b) {
     }
     return result;
 }
+
+Array MathOps::elementWiseMultiply(const Array& a, const Array& b) {
+    if (a.getRows() != b.getRows() || a.getCols() != b.getCols()) {
+        throw std::invalid_argument("Arrays must have the same dimensions for element-wise multiplication.");
+    }
+
+    Array result(a.getRows(), a.getCols());
+    for (int i = 0; i < a.getRows(); ++i) {
+        for (int j = 0; j < a.getCols(); ++j) {
+            result(i, j) = a(i, j) * b(i, j);
+        }
+    }
+    return result;
+}
+
+double MathOps::sum(const Array& a) {
+    double total = 0;
+    for (int i = 0; i < a.getRows(); ++i) {
+        for (int j = 0; j < a.getCols(); ++j) {
+            total += a(i, j);
+        }
+    }
+    return total;
+}
+
+double MathOps::mean(const Array& a) {
+    return sum(a) / (a.getRows() * a.getCols());
+}

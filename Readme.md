@@ -12,3 +12,13 @@ num_cry/
 │   └── lin_alg.cpp
 └── main.cpp
 ```
+
+## Compile using
+```
+g++ -Iinclude src/*.cpp main.cpp -o num_cry
+```
+
+## Run using
+```
+./num_cry
+```

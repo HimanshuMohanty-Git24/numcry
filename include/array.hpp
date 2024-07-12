@@ -8,13 +8,17 @@ class Array {
 public:
     Array(int rows, int cols);
     Array(const std::vector<std::vector<double>>& data);
-
+    
     void print() const;
 
     int getRows() const;
     int getCols() const;
+
     double& operator()(int row, int col);
     double operator()(int row, int col) const;
+
+    Array reshape(int newRows, int newCols) const;
+    Array flatten() const;
 
 private:
     std::vector<std::vector<double>> data_;
